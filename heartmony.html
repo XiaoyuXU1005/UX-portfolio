@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Heartmony</title>
+  <!-- 引入字体 -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="heartmony.css" />
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="navbar">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#" class="active">Casestudy</a></li>
+        <!-- 点击后会跳转到下文 footer 中的 #contact-info -->
+        <li><a href="#contact-info">Get In Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+
+  <!-- 第一部分：封面区域 -->
+  <section class="first-section">
+    <div class="image-box">
+      <img src="necklace.jpeg" alt="Heartmony Pendant" />
+    </div>
+    <div class="text-box">
+      <h1 class="product-name">Heartmony</h1>
+      <h2 class="tagline">
+        Feel Every Beat: A haptic pendant redefining concerts for the deaf and
+        hard of hearing
+      </h2>
+      <p class="description"></p>
+    </div>
+  </section>
+
+  <!-- 第二部分：项目基本信息 -->
+  <section class="second-section">
+    <div class="basic-info">
+      <div class="info-item">
+        <h3>Client</h3>
+        <p>Neruda Arts</p>
+      </div>
+      <div class="info-item">
+        <h3>Project Type</h3>
+        <p>Client and Course Project</p>
+      </div>
+      <div class="info-item">
+        <h3>Team</h3>
+        <p>4 Team Members</p>
+      </div>
+      <div class="info-item">
+        <h3>Timeline</h3>
+        <p>Sep 2024 - Dec 2024 (12 weeks)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第三部分：关于客户 -->
+  <section class="client-section">
+    <div class="client-content">
+      <h3 class="section-subtitle">About the Client</h3>
+      <div class="client-logo">
+        <img src="Neruda.png" alt="Neruda Arts Logo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 第四部分：愿景与客户需求 -->
+  <section class="vision-section">
+    <div class="vision-content">
+      <div class="text-content">
+        <h2 class="vision-title">Introduction of the Client</h2>
+        <p class="vision-description">
+          <span class="highlight"
+            >"Our vision is to create an inclusive space where everyone feels
+            welcome and can meaningfully engage with music"</span
+          >
+          <br />
+          Neruda Arts, based in St. Jacobs, Ontario, hosts annual concerts
+          featuring global performers, bringing diverse arts and culture to the
+          community. They aim to make their events accessible to the hard of
+          hearing and Deaf audience.
+        </p>
+
+        <div class="client-requirements">
+          <h3 class="requirements-title">Client's Requirements</h3>
+          <ul class="requirements-list">
+            <li>The product should be portable that is easy to carry and store.</li>
+            <li>The product should be easy to use and understand.</li>
+            <li>The product should be able to be used in different environments.</li>
+            <li>The product should be low cost and easy to manufacture.</li>
+            <li>The product should be accessible to all users.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第五部分：问题空间 -->
+  <section class="problem-space">
+    <h3>
+      Based on the client's requirements, we identified the following problem
+      space:
+    </h3>
+    <h2 class="problem-statement">
+      How might we enable individuals hard of hearing to fully engage in live
+      concerts?
+    </h2>
+  </section>
+
+  <!-- 第六部分：研究过程 -->
+  <section class="research-section">
+    <div class="research-content">
+      <h2 class="research-title">Determine the best product for the client</h2>
+      <div class="research-text">
+        <p>
+          We first did literature reviews to understand our target group --- deaf
+          and hard of hearing people, and the use of haptic techology on concert
+          for these group of people. Then we use different research method to
+          determine our product.
+        </p>
+
+        <h2 class="research-title">User Personas</h2>
+        <p>
+          Personas help align us around user needs, guiding design and
+          development decisions to create a product that truly resonates with
+          the target audience.
+        </p>
+      </div>
+
+      <!-- Persona 展示 -->
+      <section class="persona-section">
+        <div class="persona-image">
+          <img src="personaH.png" alt="User Personas" />
+        </div>
+
+        <div class="persona-details">
+          <div class="persona-column">
+            <h3>Amani</h3>
+            <ul class="persona-list">
+              <li>Young, vibrant, and social.</li>
+              <li>Loves outdoor summer concerts.</li>
+              <li>
+                Suffers from auditory processing challenges due to an accident.
+              </li>
+              <li>Struggles with hearing higher frequencies.</li>
+              <li>Feels overwhelmed in multi-sensory settings.</li>
+              <li>Misses enjoying concerts with friends.</li>
+            </ul>
+          </div>
+
+          <div class="persona-column">
+            <h3>Jamie</h3>
+            <ul class="persona-list">
+              <li>Older, with age-related hearing loss.</li>
+              <li>A solitary musician for most of his life.</li>
+              <li>Feels left out when his family attends concerts without him.</li>
+              <li>
+                Recently decided to join family outings but finds it hard to stay
+                engaged.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Storyboard -->
+      <h2 class="research-title">User Storyboard</h2>
+      <div class="research-text">
+        <p>
+          Storyboards help us visualize user experiences and workflows,
+          enabling teams to better understand user interactions, identify
+          potential pain points, and refine product features to create a
+          seamless and intuitive solution.
+        </p>
+      </div>
+      <section class="storyboard-section">
+        <div class="storyboard-image">
+          <img src="storyboard.jpg" alt="User Storyboard" />
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- 第七部分：设计流程 -->
+  <section class="design-process">
+    <h3>After about one month of research and design:</h3>
+    <h2 class="process-statement">
+      We determined to create a small haptic device and conducted multiple rounds
+      of user testing to refine our design.
+    </h2>
+  </section>
+
+  <!-- 第八部分：线框图展示 -->
+  <section class="wireframes-showcase">
+    <div class="wireframes-content">
+      <h2 class="wireframes-title">Wireframes</h2>
+      <p class="wireframes-description">
+        Our product includes a remote to control the vibration and a wearable
+        accessory for the wrist or neck to feel it.
+      </p>
+      <div class="wireframes-grid">
+        <div class="wireframe-item large">
+          <img src="wireframe.png" alt="Wireframe 1" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第九部分：低保真反馈 -->
+  <section class="feedback-section">
+    <div class="feedback-content">
+      <h2 class="feedback-title">Insight & Feedback</h2>
+      <div class="feedback-grid">
+        <div class="feedback-column">
+          <h3>User Insight</h3>
+          <ul class="feedback-list">
+            <li>A device that can be used in concerts/ on the go.</li>
+            <li>Small and discreet to avoid unnecessary attention.</li>
+            <li>Easy to use by users 40 and older</li>
+            <li>Does not distract the user from the concert experience, low interaction.</li>
+          </ul>
+        </div>
+        <div class="feedback-column">
+          <h3>Design Decision</h3>
+          <ul class="feedback-list">
+            <li>Handheld device directly for catching live performances.</li>
+            <li>
+              Once the device is not in use, it can be held, put into pocket or
+              kept on their lap.
+            </li>
+            <li>Create a design resembling familiar tools like TV remotes.</li>
+            <li>
+              We avoided a digital product to eliminate distractions from
+              notifications and reduce concerns about battery life.
+            </li>
+          </ul>
+        </div>
+        <div class="feedback-column">
+          <h3>User Feedback</h3>
+          <ul class="feedback-list">
+            <li class="feedback-negative">
+              Does the microphone capture sound accurately enough for haptic
+              feedback? Can the sound be customized using an equalizer?
+            </li>
+            <li class="feedback-negative">
+              They did not feel two hand devices very necessary and wanted to feel
+              haptic sensations in your upper body area.
+            </li>
+            <li class="feedback-positive">
+              They were happy with the design, especially the curved back.
+            </li>
+            <li class="feedback-negative">
+              Holding the device throughout a concert could be distracting/
+              tiring.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第十部分：中保真原型 -->
+  <section class="mid-fi-showcase">
+    <div class="mid-fi-content">
+      <h2 class="mid-fi-title">Mid-Fidelity Prototype</h2>
+      <p class="mid-fi-description">
+        Based on the feedback from low-fidelity wireframes testing, we refined
+        our design into mid-fidelity prototypes, incorporating user suggestions
+        and improving the overall interaction flow.
+      </p>
+      <div class="mid-fi-grid">
+        <div class="mid-fi-item">
+          <img src="mif-fi design.png" alt="Mid-fidelity Prototype 1" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第十一部分：中保真反馈（重复的反馈区，如果不需要可删） -->
+  <section class="feedback-section">
+    <div class="feedback-content">
+      <h2 class="feedback-title">Insight & Feedback</h2>
+      <div class="feedback-grid">
+        <div class="feedback-column">
+          <h3>User Insight</h3>
+          <ul class="feedback-list">
+            <li>A device that can be used in concerts/ on the go.</li>
+            <li>Small and discreet to avoid unnecessary attention.</li>
+            <li>Easy to use by users 40 and older</li>
+            <li>Does not distract the user from the concert experience, low interaction.</li>
+          </ul>
+        </div>
+        <div class="feedback-column">
+          <h3>Design Decision</h3>
+          <ul class="feedback-list">
+            <li>Handheld device directly for catching live performances.</li>
+            <li>
+              Once the device is not in use, it can be held, put into pocket or
+              kept on their lap.
+            </li>
+            <li>Create a design resembling familiar tools like TV remotes.</li>
+            <li>
+              We avoided a digital product to eliminate distractions from
+              notifications and reduce concerns about battery life.
+            </li>
+          </ul>
+        </div>
+        <div class="feedback-column">
+          <h3>User Feedback</h3>
+          <ul class="feedback-list">
+            <li class="feedback-negative">
+              Does the microphone capture sound accurately enough for haptic
+              feedback? Can the sound be customized using an equalizer?
+            </li>
+            <li class="feedback-negative">
+              They did not feel two hand devices very necessary and wanted to
+              feel haptic sensations in your upper body area.
+            </li>
+            <li class="feedback-positive">
+              They were happy with the design, especially the curved back.
+            </li>
+            <li class="feedback-negative">
+              Holding the device throughout a concert could be distracting/
+              tiring.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第十二部分：最终方案 -->
+  <section class="final-iteration-section">
+    <div class="final-content">
+      <div class="final-header">
+        <h2 class="final-title">
+          Final Iteration - Designed for effortless use—just put it on, and you're
+          ready to dance!
+        </h2>
+        <p class="final-description">
+          Featuring plastic bead straps that optimize vibration technology and a
+          wooden base that enhances comfort and haptic sensations, it combines
+          functionality with tactile appeal. Fully customizable for all users,
+          it's easy to wear, easy to remove, and crafted for both performance and
+          enjoyment.
+        </p>
+      </div>
+
+      <div class="product-images">
+        <div class="image-card">
+          <img src="IMG_1837.jpeg" alt="Heartmony Necklace Front View" />
+        </div>
+        <div class="image-card">
+          <img src="hand.jpeg" alt="Heartmony Bracelet on Wrist" />
+        </div>
+      </div>
+
+      <div class="haptic-section">
+        <h2 class="haptic-title">Haptic Technology</h2>
+        <div class="haptic-content">
+          <div class="haptic-text">
+            <div class="hapticlabs-intro">
+              <p>
+                Hapticlabs offers a comprehensive no-code toolkit designed to
+                simplify the creation of haptic interactions. Their flagship
+                software, Hapticlabs Studio, enables users to design custom
+                haptic patterns and signals without any coding. This software
+                integrates seamlessly with their hardware DevKit and Mobile App,
+                allowing for real-time evaluation of designs across various
+                devices. The DevKit facilitates the augmentation of objects with
+                haptic feedback, while the Mobile App provides tangible feedback
+                on iOS devices. This ecosystem streamlines the prototyping,
+                evaluation, and deployment of haptic experiences, making it
+                accessible for users to develop immersive interactions
+                efficiently.
+              </p>
+            </div>
+            <div class="haptic-implementation">
+              <p>
+                We used the Hapticlabs kit to create a custom haptic sequence for
+                a Christmas song. Using Hapticlab's no-code toolkit, we designed
+                and refined haptic patterns that matched the rhythm and melody of
+                the song. With the DevKit, we integrated these patterns into the
+                hardware to deliver a tactile experience, and the Mobile App
+                allowed us to test and adjust the sequence in real-time. This
+                project gave us a hands-on opportunity to explore how haptic
+                technology can enhance the way we experience music through touch.
+              </p>
+            </div>
+          </div>
+          <div class="haptic-images">
+            <div class="image-card">
+              <img src="kit.png" alt="Hapticlabs Development Kit" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第十三部分：App 接口展示 -->
+  <section class="app-interface-section">
+    <div class="interface-content">
+      <div class="interface-grid">
+        <div class="interface-item">
+          <div class="interface-image">
+            <img src="microphone_setting.png" alt="Microphone Settings Interface" />
+          </div>
+          <h3>Microphone Settings</h3>
+          <p>
+            Step One is to fill out basic event information to identify each
+            playlist. Set the microphone sensitivity (noise, instruments and
+            genre)
+          </p>
+        </div>
+        <div class="interface-item">
+          <div class="interface-image">
+            <img src="haptic_setting.png" alt="Haptic Settings Interface" />
+          </div>
+          <h3>Haptic Settings</h3>
+          <p>
+            Step Two is to set up the haptic settings, if they want the vibration
+            to adapt dynamically to the concert and how they want the feedback to
+            respond (pattern & intensity).
+          </p>
+        </div>
+        <div class="interface-item">
+          <div class="interface-image">
+            <img src="frequency_setting.png" alt="Frequency Settings Interface" />
+          </div>
+          <h3>Frequency Settings (Equalizer)</h3>
+          <p>
+            Step Three is to set up the frequency feedback. This will add some
+            structure to the vibration feedback i.e all low frequency sounds
+            between 20 - 250hz will have the highest intensity.
+          </p>
+        </div>
+        <div class="interface-item">
+          <div class="interface-image">
+            <img src="dashboard.png" alt="Dashboard Interface" />
+          </div>
+          <h3>Dashboard</h3>
+          <p>
+            Step Four check the dashboard for the completed playlist. Access and
+            play when ready.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+
+  <footer id="contact-info" class="footer-section">
+    <h2 class="footer-title">Contact Information</h2>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- 联系方式1 -->
+        <div class="footer-card">
+          <h3>Siyao Xu</h3>
+          <p>
+            <a href="mailto:xuxx4070@mylaurier.ca">xuxx4070@mylaurier.ca</a>
+          </p>
+        </div>
+        <!-- 联系方式2 -->
+        <div class="footer-card">
+          <h3>Xioyu Xu</h3>
+          <p>
+            <a href="mailto:xuxx3630@mylaurier.ca">xuxx3630@mylaurier.ca</a>
+          </p>
+        </div>
+        <!-- 联系方式3 -->
+        <div class="footer-card">
+          <h3>Kanika Varma</h3>
+          <p>
+            <a href="mailto:Varm4620@mylaurier.ca">Varm4620@mylaurier.ca</a>
+          </p>
+        </div>
+        <!-- 联系方式4 -->
+        <div class="footer-card">
+          <h3>Jerome Huang</h3>
+          <p>
+            <a href="mailto:huan0720@mylaurier.ca">huan0720@mylaurier.ca</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  
+
+  <!-- 引入脚本 -->
+  <script src="heartmony.js"></script>
+</body>
+</html>
