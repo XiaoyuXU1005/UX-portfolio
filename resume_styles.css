@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 头部导航 */
+header {
+  background-color: #FDFCF7;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Silkscreen', serif; /* Explicitly set the font-family */
+}
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul {
+  color: #000;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: rgba(255, 116, 177, 0.6);
+}
+
+body {
+  font-family: "Chakra Petch", serif;
+  font-weight: 300; 
+  color: #000000;
+  background-color: var(--black);
+  line-height: 1.5;
+  min-height: 100vh;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  min-height: 100vh; 
+  max-width: 1024px; 
+  padding: 0 20px;
+  margin: 0 auto; 
+}
+
+h1 {
+  font-family: var(--shareTech);
+  color: var(--blue);
+}
+
+#identity-results,
+#resume,
+#loading-alpha-div,
+#loadingH1,
+#loadingMessage2,
+#message {
+  margin-top: 20px;
+  font-family: var(--shareTech);
+  font-weight: 900;
+  font-size: 24px;
+  color: var(--blue);
+}
+
+i {
+  font-size: 24px;
+  color: var(--blue);
+  animation: none;
+}
+
+.block {
+  width: 50px;
+  height: 50px;
+  background-color: var(--black);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.cursor:after {
+  content: "_";
+  opacity: 0;
+  animation: cursor 1s infinite;
+}
+
+.sign:before {
+  content: "> ";
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#loading-alpha-div,
+.img-div {
+  display: none;
+}
+
+#loadingMessage2 {
+  display: none;
+}
+
+/* sub-item: 左侧缩进 */
+.sub-item {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+/* inline: 与图标文字保持同一行 */
+.inline {
+  display: inline;
+  margin-left: 10px;
+}
+
+/* 收叠列表（默认隐藏） */
+.collapsible-content {
+  display: none;
+  margin-left: 20px;
+  list-style-type: square;
+}
+
+/* 收叠标题 */
+.collapsible {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.collapsible:hover {
+  color: rgba(255, 116, 177, 0.6);
+}
+
+/* Experience Container */
+.experience-item {
+  margin-left: 40px;
+}
+/* Experience h3 标题 */
+.experience-item h3 {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: rgba(255, 116, 177, 0.6);
+}
+.experience-item h3 i {
+  margin-right: 10px; 
+  font-size: 28px; 
+  vertical-align: middle;
+  color: #000000;
+}
+/* Experience h4 副标题 */
+.experience-item h4 {
+  margin-left: 40px;
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+/* Experience 详情列表 */
+.experience-item div ul {
+  margin-left: 100px;
+  list-style-type: disc;
+}
+.experience-item div ul li {
+  margin-bottom: 5px;
+  font-size: 22px;
+}
+
+/* Education Container */
+.education-item {
+  margin-left: 40px;
+}
+.education-item .degree {
+  margin-bottom: 20px;
+}
+.education-item h3 {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: rgba(255, 116, 177, 0.6);
+}
+.education-item h3 i {
+  margin-right: 10px;
+  font-size: 28px;
+  vertical-align: middle;
+  color: #000000;
+}
+/* Degree 标题 */
+.education-item h4 {
+  margin-left: 40px;
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+/* 收叠列表内容 */
+.education-item .collapsible-content {
+  margin-left: 120px;
+  list-style-type: disc;
+}
+.education-item .collapsible-content li {
+  margin-bottom: 5px;
+  font-size: 22px;
+}
+/* 收叠标题 */
+.education-item .collapsible {
+  margin-left: 75px;
+  cursor: pointer;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+.education-item .collapsible:hover {
+  color: rgba(255, 116, 177, 0.6);
+}
+
+/* Projects Container */
+.projects-item {
+  margin-left: 40px;
+}
+/* Projects h3 标题 */
+.projects-item h3 {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: rgba(255, 116, 177, 0.6);
+}
+.projects-item h3 i {
+  margin-right: 10px; 
+  font-size: 28px; 
+  vertical-align: middle;
+  color: #000000;
+}
+/* Projects h4 副标题 */
+.projects-item h4 {
+  margin-left: 40px;
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+/* Projects 详情列表 */
+.projects-item div ul {
+  margin-left: 100px;
+  list-style-type: disc;
+}
+.projects-item div ul li {
+  margin-bottom: 5px;
+  font-size: 22px;
+}
+
+/* Research Container */
+.research-item {
+  margin-left: 40px;
+}
+.research-item h3 {
+  /* 跟 Experience / Projects 标题保持一致 */
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: rgba(255, 116, 177, 0.6);
+}
+.research-item h3 i {
+  margin-right: 10px;
+  font-size: 28px;
+  vertical-align: middle;
+  color: #000000;
+}
+.research-item h4 {
+  margin-left: 40px;
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+.research-item div ul {
+  margin-left: 100px;
+  list-style-type: disc;
+}
+.research-item div ul li {
+  margin-bottom: 5px;
+  font-size: 22px;
+}
+
+/* footer */
+footer {
+  background-color: #FDFCF7;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 4rem; /* 上方间距保留 */
+  width: 100%; /* 确保铺满屏幕宽度 */
+  box-sizing: border-box; /* 包括 padding 在宽度内 */
+  font-family: 'Silkscreen', serif;
+}
+
+/* 个人信息居中 */
+#email, #address, #occupation {
+  text-align: center;
+  margin: 5px auto;
+  font-size: 24px;
+}
+
+/* 或者使用容器来包裹这些信息 */
+.personal-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  font-size: 24px;
+}

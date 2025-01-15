@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Xiaoyu's UX Portfolio</title>
+
+  <!-- 引入 Orbitron 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" 
+    rel="stylesheet"
+  >
+
+  <style>
+    /* ---------------------------------------
+       全局初始化与变量
+    ----------------------------------------*/
+    * {
+      margin: 0; 
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --accent-color: #000;           
+      --bg-color: #f2f7ed;           
+      --text-color: #000;            
+      /* 将像素风变量替换为 Orbitron */
+      --pixel-font: 'Orbitron', sans-serif; 
+      --hero-text-color: #fff;  
+      --hero-font: 'Orbitron', sans-serif;  
+    }
+
+    html, body {
+      height: 100%;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--pixel-font);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ---------------------------------------
+       头部导航
+    ----------------------------------------*/
+    header {
+      background-color: #FDFCF7;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px  rgba(255, 116, 177, 0.6);
+    }
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-family: var(--pixel-font);
+    }
+    nav a:hover {
+      color: rgba(255, 116, 177, 0.6);
+    }
+
+    /* ---------------------------------------
+       Hero Section: 渐变球 + 打字机文字
+    ----------------------------------------*/
+    .hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 75vh; 
+      text-align: center;
+      padding: 2rem;
+      overflow: visible;
+    }
+
+    /* 彩色渐变球 */
+    .gradient-ball {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle farthest-corner at 30% 30%,
+        rgba(0, 160, 180, 1) 0%,      /* Vibrant teal */
+        rgba(0, 120, 160, 0.8) 20%,   /* Slightly darker teal with some transparency */
+        rgba(89, 193, 186, 0.3) 40%,  /* Softer aqua fade */
+        rgba(255, 116, 177, 0.6) 65%, /* Pink with partial transparency */
+        #6f7bf7 100%                  /* Final purple */
+      );
+      filter: blur(100px);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    /* 打字机效果 */
+    .typewriter h1 {
+      font-family: var(--hero-font);
+      font-weight: 700;
+      font-size: clamp(2rem, 8vw, 6rem);
+      color: var(--hero-text-color);
+
+      white-space: nowrap;
+      border-right: 4px solid #fff;
+      overflow: hidden; 
+      width: 0;
+      
+      animation:
+        typingLine 2s steps(30, end) forwards,
+        blinkCaret 0.7s step-end infinite;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2;  /* 确保内容在渐变球上层 */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    @keyframes typingLine {
+      0% { width: 0; }
+      100% { width: 100%; }
+    }
+    @keyframes blinkCaret {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #fff; }
+    }
+
+    /* 第二行简介：淡入 */
+    .hero-subtitle {
+      z-index: 2;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      width: 90%;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 2.1s;
+      line-height: 1.6;
+      position: relative;
+      color: #fff;
+      font-family: var(--hero-font);
+      font-weight: 500;
+    }
+    @keyframes fadeIn {
+      0%   { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* 按钮 - CHECK MY RESUME */
+    .pixel-grid {
+      display: inline-block;
+      background-color: transparent;
+      border: 2px solid #fff;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      margin-top: 1rem;
+      z-index: 2;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 2.5s; 
+      transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease;
+      position: relative;
+      border-radius: 50px; 
+    }
+    .pixel-grid:hover {
+      background-color: #fff;
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0 #000;
+    }
+    .pixel-grid:hover .text {
+      color: #000;
+    }
+    .pixel-grid .text {
+      font-family: var(--hero-font);
+      color: #fff;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    /* ---------------------------------------
+       Projects 主区块
+    ----------------------------------------*/
+    .projects {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    .projects h2 {
+      font-family: var(--hero-font);
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 2.5rem;
+      color: #fff;  
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      transition: color 0.3s ease;
+    }
+    .projects h2:hover {
+      color: rgba(255, 116, 177, 0.6);
+    }
+
+    .project-section {
+      margin-bottom: 3rem;
+    }
+    .project-section h3 {
+      font-family: var(--hero-font);
+      font-size: 1.2rem;
+      color: #fff;  
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 让 .project-card 本身更具弹性和留白 + 毛玻璃 */
+    .project-card {
+      padding: 2rem;
+      gap: 3rem;
+      backdrop-filter: blur(10px); /* 毛玻璃效果 */
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      min-height: 280px;
+      border-radius: 40px; 
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+    .project-card:hover {
+      transform: scale(1.01);
+      background: linear-gradient(
+        135deg,
+        rgba(111, 123, 247, 0.2),
+        rgba(89, 193, 186, 0.2),
+        rgba(255, 116, 177, 0.2)
+      );
+    }
+
+    /* 限制文字区域的宽度，避免文字过宽 */
+    .project-info-left {
+      flex: 1.2 1 400px;
+      padding: 2rem 1rem 2rem 3rem;
+    }
+
+    .project-info-left h4 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .project-info-left p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* 限制图片区域的宽度，保持与文字的比例 */
+    .project-image-right {
+      flex: 0.8 1 300px;
+      padding: 2rem;
+      margin-right: 2rem;
+      height: 300px;  /* 确保容器是正方形 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      backdrop-filter: blur(10px);
+    }
+
+    /* 图片样式 */
+    .project-image-right img {
+      width: 300px;  /* 固定宽度 */
+      height: 300px;  /* 固定高度 */
+      object-fit: cover;  /* 保持图片比例并填充容器 */
+      border-radius: 16px;
+      transition: transform 0.3s ease;
+    }
+    .project-image-right img:hover {
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 768px) {
+      .project-card {
+        padding: 1.5rem;
+        gap: 2rem;
+      }
+
+      .project-info-left {
+        padding: 1rem;
+        text-align: left;
+      }
+
+      .project-image-right {
+        margin-right: 0;
+        height: 300px;  /* 保持正方形 */
+        width: 100%;
+      }
+      
+      .project-image-right img {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    /* ---------------------------------------
+       渐进显示动画（CSS部分）
+    ----------------------------------------*/
+    /* 初始状态：透明 + 下移 */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease;
+    }
+    /* 进入可视区域后：不透明 + 回到原位 */
+    .reveal-on-scroll.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---------------------------------------
+       联系方式与页脚
+    ----------------------------------------*/
+    .bottom-section {
+      text-align: center;
+      margin: 3rem auto;
+      font-size: 1rem;
+    }
+    .bottom-section a {
+      color: rgba(255, 116, 177, 0.6);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 116, 177, 0.6);
+      transition: opacity 0.3s ease;
+    }
+    .bottom-section a:hover {
+      opacity: 0.8;
+    }
+
+    footer {
+      background-color: #FDFCF7;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+      font-family: var(--hero-font);
+    }
+    footer p {
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+      font-family: var(--hero-font);
+    }
+  </style>
+</head>
+<body>
+  <!-- 头部导航 -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section: 彩色渐变球 + 打字机文字 + 淡入副标题 -->
+  <section class="hero">
+    <!-- 渐变球 -->
+    <div class="gradient-ball"></div>
+
+    <!-- 打字机文本 -->
+    <div class="typewriter">
+      <h1>HI, I AM XIAOYU XU</h1>
+    </div>
+
+    <!-- 副标题淡入 -->
+    <p class="hero-subtitle">
+      A JUNIOR PROGRAMMER AND UX DESIGNER AIMING TO CREATE 
+      USER-FRIENDLY AND INNOVATIVE SOLUTIONS.
+    </p>
+
+    <!-- 按钮 -->
+    <a href="resume.html" class="pixel-grid">
+      <div class="text">CHECK MY RESUME</div>
+    </a>
+  </section>
+
+  <!-- Projects 主区块（已完成 + 未完成） -->
+  <section id="projects" class="projects">
+    <h2>My Projects</h2>
+
+    <!-- 已完成项目 -->
+    <div class="project-section finished">
+      <h3>Finished Projects</h3>
+
+      <!-- 示例项目1 -->
+      <!-- 将 reveal-on-scroll 类添加到 .project-card 上，实现滚动渐进效果 -->
+      <div class="project-card reveal-on-scroll">
+        <div class="project-info-left">
+          <h4>Heartmony</h4>
+          <p>Time: Sept - Dec 2024<br>
+             Type: Haptic Device</p>
+          <p>A haptic pendant redefining concerts for the deaf and hard of hearing.</p>
+        </div>
+        <div class="project-image-right">
+          <!-- 替换成你的实际图片路径 -->
+          <img src="neck.jpeg" alt="Heartmony Pendant">
+        </div>
+      </div>
+
+      <!-- 示例项目2 -->
+      <div class="project-card reveal-on-scroll">
+        <div class="project-info-left">
+          <h4>PlanPal</h4>
+          <p>Time: Sept - Dec 2024<br>
+             Type: Website</p>
+          <p>A web-based task management app with a pixel-art theme. Features drag-and-drop task boards and real-time collaboration.</p>
+        </div>
+        <div class="project-image-right">
+          <!-- 替换成你的实际图片路径 -->
+          <img src="Landing Page.png" alt="AR Furniture Preview">
+        </div>
+      </div>
+    </div>
+
+    <!-- 未完成项目 -->
+    <div class="project-section ongoing">
+      <h3>On Going Projects</h3>
+
+      <!-- 示例项目1 -->
+      <div class="project-card reveal-on-scroll">
+        <div class="project-info-left">
+          <h4>IoT Plant Monitor</h4>
+          <p>Time: Sep - Dec 2023<br>
+             Type: IoT / Web / Hardware</p>
+          <p>Building a plant health monitor with sensors and an intuitive web dashboard. Current focus: low-power data sync.</p>
+        </div>
+        <div class="project-image-right">
+          <!-- 替换成你的实际图片路径 -->
+          <img src="images/iotplant.png" alt="IoT Plant Monitor">
+        </div>
+      </div>
+
+      <!-- 示例项目2 -->
+      <div class="project-card reveal-on-scroll">
+        <div class="project-info-left">
+          <h4>Pixel Social</h4>
+          <p>Time: Ongoing<br>
+             Type: Social / Pixel Art</p>
+          <p>A pixel-themed lightweight social platform. Aims to reduce complexity and create a playful environment.</p>
+        </div>
+        <div class="project-image-right">
+          <!-- 替换成你的实际图片路径 -->
+          <img src="images/pixelsocial.png" alt="Pixel Social">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系方式 / 底部说明 -->
+  <div class="bottom-section">
+    <p>
+      Connect on LinkedIn:
+      <a href="https://www.linkedin.com/in/jessie-xu-592361232" target="_blank">Jessie Xu</a>
+    </p>
+    <p>
+      Contact via Email:
+      <a href="mailto:xuxy2002@outlook.com">xuxy2002@outlook.com</a>
+    </p>
+  </div>
+
+  <!-- 页脚 -->
+  <footer>
+    <p>© 2025 Xiaoyu Xu All Rights Reserved.</p>
+    <p>Let's Work Together!</p>
+  </footer>
+
+  <!-- ---------------------------------------
+       JavaScript: Intersection Observer 
+       实现滚动渐进显示
+  ------------------------------------------>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // 加上后，元素只在第一次出现时动画
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1  // 元素进入视口 10% 即触发
+      });
+
+      const revealEls = document.querySelectorAll('.reveal-on-scroll');
+      revealEls.forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
