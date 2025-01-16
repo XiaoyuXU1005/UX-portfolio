@@ -1,14 +1,13 @@
 /* ------------------------------
-   字体导入
+   font
 ------------------------------ */
 @import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Roboto:wght@400;700&display=swap');
 
 /* --------------------------------
-   全局基础样式
+   whole page style
 ---------------------------------- */
 :root {
-  --primary-color: #08F7FE; /* 科技感亮色 */
-  --secondary-color: #00ff9f; /* 可用于强调 */
+  --primary-color: #08F7FE; 
   --heading-color: #ffffff;
   --text-color: #cdd3df;
   --bg-gradient-start: #0b0e13;
@@ -25,7 +24,7 @@
 }
 
 /* ------------------------------
-   Body 样式
+   Body style
 ------------------------------ */
 body {
   font-family: 'Roboto', sans-serif;
@@ -41,7 +40,7 @@ body {
 }
 
 /* ------------------------------
-   Navbar 样式
+   Navbar
 ------------------------------ */
 .navbar {
   width: 100%;
@@ -80,7 +79,7 @@ body {
 }
 
 /* ------------------------------
-   第一屏 Section
+   branding page
 ------------------------------ */
 .first-section {
   display: flex;
@@ -97,7 +96,6 @@ body {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* 文字部分 */
 .text-box {
   max-width: 600px;
 }
@@ -124,7 +122,7 @@ body {
 }
 
 /* ------------------------------
-   第二部分：Basic Info
+   client section
 ------------------------------ */
 .second-section {
   width: 100%;
@@ -165,7 +163,7 @@ body {
 }
 
 /* ------------------------------
-   关于客户
+   client information
 ------------------------------ */
 .client-section {
   padding: 4rem 2rem;
@@ -194,9 +192,6 @@ body {
   display: block;
 }
 
-/* ------------------------------
-   愿景 Section
------------------------------- */
 .vision-section {
    padding: 3rem 2rem; 
   
@@ -232,7 +227,6 @@ body {
   font-weight: 500;
 }
 
-/* 客户需求 */
 .client-requirements {
   margin-top: 1.5rem;
   color: var(--text-color);
@@ -265,7 +259,7 @@ body {
 }
 
 /* ------------------------------
-   问题空间
+   problem space
 ------------------------------ */
 .problem-space {
   text-align: center;
@@ -290,7 +284,7 @@ body {
 }
 
 /* ------------------------------
-   研究 Section
+   user research
 ------------------------------ */
 .research-section {
   padding: 3rem 2rem;
@@ -399,7 +393,7 @@ body {
 }
 
 /* ------------------------------
-   设计流程
+   Design Process
 ------------------------------ */
 .design-process {
   text-align: center;
@@ -416,7 +410,7 @@ body {
 }
 
 /* ------------------------------
-   线框图
+   wireframe (lo-fi)
 ------------------------------ */
 .wireframes-showcase {
   padding: 3rem 2rem;
@@ -544,7 +538,7 @@ body {
 }
 
 /* ------------------------------
-   中保真
+   mid-fi
 ------------------------------ */
 .mid-fi-showcase {
   padding: 3rem 2rem;
@@ -598,7 +592,7 @@ body {
 }
 
 /* ------------------------------
-   最终方案
+   high-fi
 ------------------------------ */
 .final-iteration-section {
   padding: 4rem 2rem;
@@ -631,7 +625,7 @@ body {
   margin: 0 auto;
 }
 
-/* 产品图组合 */
+/* product images */
 .product-images {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -667,14 +661,13 @@ body {
   border-radius: 10px;
 }
 
-/* 响应式 */
 @media (max-width: 768px) {
   .product-images {
     grid-template-columns: 1fr;
   }
 }
 
-/* Haptic Section */
+/* Haptic kit */
 .haptic-section {
   margin-top: 2rem;
 }
@@ -787,9 +780,6 @@ body {
   }
 }
 
-/* ------------------------------
-   动画相关
------------------------------- */
 .slide-in {
   opacity: 0;
   transform: translateY(100px);
@@ -802,7 +792,7 @@ body {
 }
 
 /* ------------------------------
-   底部 Section
+   footer
 ------------------------------ */
 .footer-section {
   padding: 3rem 2rem;

@@ -1,32 +1,32 @@
-// Intersection Observer 配置
+// Intersection Observer
 const observerOptions = {
   root: null,
   threshold: 0.1,
   rootMargin: '0px',
 };
 
-// 观察器回调函数
+// observer call back function
 const observerCallback = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      // 元素进入视口时添加可见类
+      // when the target is going to the screen, make it visible
       entry.target.classList.add('slide-in-visible');
     } else {
-      // 元素离开视口时移除可见类
+      // when the target is leaving the screen, make it invisible
       entry.target.classList.remove('slide-in-visible');
     }
   });
 };
 
-// 创建观察器实例
+// create an observer
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-// 当 DOM 加载完成后执行
+// execute when the document finished loading
 document.addEventListener('DOMContentLoaded', () => {
-  // 选择所有需要添加动画的部分
+  // select all section
   const sections = document.querySelectorAll('section');
 
-  // 为每个部分添加初始类名并观察
+  // add slide-in interaction for all section
   sections.forEach((section) => {
     section.classList.add('slide-in');
     observer.observe(section);

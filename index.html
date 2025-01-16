@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Xiaoyu's UX Portfolio</title>
 
-  <!-- 引入 Orbitron 字体 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link 
@@ -13,9 +12,12 @@
     rel="stylesheet"
   >
 
+  <!-- ****************** CSS CSS CSS CSS CSS ******************* -->
+   <!-- ****************** CSS STYLE SECTION ******************* -->
+
   <style>
     /* ---------------------------------------
-       全局初始化与变量
+      overall style
     ----------------------------------------*/
     * {
       margin: 0; 
@@ -42,7 +44,7 @@
     }
 
     /* ---------------------------------------
-       头部导航
+       header
     ----------------------------------------*/
     header {
       background-color: #FDFCF7;
@@ -75,7 +77,7 @@
     }
 
     /* ---------------------------------------
-       Hero Section: 渐变球 + 打字机文字
+       Hero Section
     ----------------------------------------*/
     .hero {
       position: relative;
@@ -89,7 +91,7 @@
       overflow: visible;
     }
 
-    /* 彩色渐变球 */
+    /* the ball in the middle */
     .gradient-ball {
       position: absolute;
       width: 600px;
@@ -97,11 +99,11 @@
       border-radius: 50%;
       background: radial-gradient(
         circle farthest-corner at 30% 30%,
-        rgba(0, 160, 180, 1) 0%,      /* Vibrant teal */
-        rgba(0, 120, 160, 0.8) 20%,   /* Slightly darker teal with some transparency */
-        rgba(89, 193, 186, 0.3) 40%,  /* Softer aqua fade */
-        rgba(255, 116, 177, 0.6) 65%, /* Pink with partial transparency */
-        #6f7bf7 100%                  /* Final purple */
+        rgba(0, 160, 180, 1) 0%,      
+        rgba(0, 120, 160, 0.8) 20%,   
+        rgba(89, 193, 186, 0.3) 40%,  
+        rgba(255, 116, 177, 0.6) 65%,
+        #6f7bf7 100%                 
       );
       filter: blur(100px);
       top: 50%; left: 50%;
@@ -109,7 +111,7 @@
       z-index: 1;
     }
 
-    /* 打字机效果 */
+    /* typewriter animation for the name */
     .typewriter h1 {
       font-family: var(--hero-font);
       font-weight: 700;
@@ -126,7 +128,7 @@
         blinkCaret 0.7s step-end infinite;
       margin-bottom: 1.5rem;
       position: relative;
-      z-index: 2;  /* 确保内容在渐变球上层 */
+      z-index: 2;  
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
     @keyframes typingLine {
@@ -138,7 +140,7 @@
       50% { border-color: #fff; }
     }
 
-    /* 第二行简介：淡入 */
+    /* My introduction */
     .hero-subtitle {
       z-index: 2;
       font-size: clamp(0.8rem, 2vw, 1rem);
@@ -159,7 +161,7 @@
       100% { opacity: 1; }
     }
 
-    /* 按钮 - CHECK MY RESUME */
+    /* button: CHECK MY RESUME */
     .pixel-grid {
       display: inline-block;
       background-color: transparent;
@@ -193,7 +195,7 @@
     }
 
     /* ---------------------------------------
-       Projects 主区块
+       Projects
     ----------------------------------------*/
     .projects {
       max-width: 1200px;
@@ -224,11 +226,11 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    /* 让 .project-card 本身更具弹性和留白 + 毛玻璃 */
+    /* project card */
     .project-card {
       padding: 2rem;
       gap: 3rem;
-      backdrop-filter: blur(10px); /* 毛玻璃效果 */
+      backdrop-filter: blur(10px); 
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
@@ -248,7 +250,7 @@
       );
     }
 
-    /* 限制文字区域的宽度，避免文字过宽 */
+    /* text section restrictions  */
     .project-info-left {
       flex: 1.2 1 400px;
       padding: 2rem 1rem 2rem 3rem;
@@ -267,12 +269,12 @@
       color: rgba(255, 255, 255, 0.8);
     }
 
-    /* 限制图片区域的宽度，保持与文字的比例 */
+    /* make the product photo 300*300 square */
     .project-image-right {
       flex: 0.8 1 300px;
       padding: 2rem;
       margin-right: 2rem;
-      height: 300px;  /* 确保容器是正方形 */
+      height: 300px; 
       display: flex;
       align-items: center;
       justify-content: center;
@@ -280,14 +282,15 @@
       backdrop-filter: blur(10px);
     }
 
-    /* 图片样式 */
+    /* product image restrictions */
     .project-image-right img {
-      width: 300px;  /* 固定宽度 */
-      height: 300px;  /* 固定高度 */
-      object-fit: cover;  /* 保持图片比例并填充容器 */
+      width: 300px;  
+      height: 300px;  
+      object-fit: cover; 
       border-radius: 16px;
       transition: transform 0.3s ease;
     }
+
     .project-image-right img:hover {
       transform: scale(1.02);
     }
@@ -298,40 +301,26 @@
         gap: 2rem;
       }
 
-      .project-info-left {
-        padding: 1rem;
-        text-align: left;
-      }
 
-      .project-image-right {
-        margin-right: 0;
-        height: 300px;  /* 保持正方形 */
-        width: 100%;
-      }
-      
-      .project-image-right img {
-        width: 300px;
-        height: 300px;
-      }
     }
 
     /* ---------------------------------------
-       渐进显示动画（CSS部分）
+       CSS Animations
     ----------------------------------------*/
-    /* 初始状态：透明 + 下移 */
+    /* before enters the visible area：transparent + moves down */
     .reveal-on-scroll {
       opacity: 0;
       transform: translateY(40px);
       transition: all 0.6s ease;
     }
-    /* 进入可视区域后：不透明 + 回到原位 */
+    /* after enters the visible area：not transparent + moves up */
     .reveal-on-scroll.active {
       opacity: 1;
       transform: translateY(0);
     }
 
     /* ---------------------------------------
-       联系方式与页脚
+       contact info and foofter
     ----------------------------------------*/
     .bottom-section {
       text-align: center;
@@ -362,8 +351,12 @@
     }
   </style>
 </head>
+
+
+<!-- ****************** HTML HTML HTML HTML ******************* -->
+<!-- ****************** HTML SECTION ******************* -->
+
 <body>
-  <!-- 头部导航 -->
   <header>
     <nav>
       <ul>
@@ -378,37 +371,37 @@
     </nav>
   </header>
 
-  <!-- Hero Section: 彩色渐变球 + 打字机文字 + 淡入副标题 -->
+  <!-- Hero Section: background gradient ball + name with typewriter effect + my introduction + resume button -->
   <section class="hero">
-    <!-- 渐变球 -->
+    <!-- gradient ball -->
     <div class="gradient-ball"></div>
 
-    <!-- 打字机文本 -->
+    <!-- typewriter name -->
     <div class="typewriter">
       <h1>HI, I AM XIAOYU XU</h1>
     </div>
 
-    <!-- 副标题淡入 -->
+    <!-- subtitle introduction -->
     <p class="hero-subtitle">
       A JUNIOR PROGRAMMER AND UX DESIGNER AIMING TO CREATE 
       USER-FRIENDLY AND INNOVATIVE SOLUTIONS.
     </p>
 
-    <!-- 按钮 -->
+    <!-- resume button -->
     <a href="resume.html" class="pixel-grid">
       <div class="text">CHECK MY RESUME</div>
     </a>
   </section>
 
-  <!-- Projects 主区块（已完成 + 未完成） -->
+  <!-- Projects (finished + unfinished) -->
   <section id="projects" class="projects">
     <h2>My Projects</h2>
 
-    <!-- 已完成项目 -->
+    <!-- finished projects -->
     <div class="project-section finished">
       <h3>Finished Projects</h3>
 
-      <!-- 示例项目1 -->
+      <!-- heartmony -->
       <a href="heartmony.html" style="text-decoration: none;">
         <div class="project-card reveal-on-scroll">
           <div class="project-info-left">
@@ -423,7 +416,7 @@
         </div>
       </a>
 
-      <!-- 示例项目2 -->
+      <!-- planpal -->
       <a href="planpal.html" style="text-decoration: none;">
         <div class="project-card reveal-on-scroll">
           <div class="project-info-left">
@@ -439,11 +432,11 @@
       </a>
     </div>
 
-    <!-- 未完成项目 -->
+    <!-- ongoing projects -->
     <div class="project-section ongoing">
       <h3>On Going Projects</h3>
 
-      <!-- 示例项目1 -->
+      <!-- orchid -->
       <div class="project-card reveal-on-scroll">
         <div class="project-info-left">
           <h4>Orchid</h4>
@@ -455,13 +448,10 @@
           <img src="coming-soon.jpg" alt="IoT Plant Monitor">
         </div>
       </div>
-
-      <!-- Pixel Social 项目已移除 -->
-      
     </div>
   </section>
 
-  <!-- 联系方式 / 底部说明 -->
+  <!-- contact information-->
   <div class="bottom-section">
     <p>
       Connect on LinkedIn:
@@ -473,28 +463,26 @@
     </p>
   </div>
 
-  <!-- 页脚 -->
+  <!-- footer -->
   <footer>
     <p>© 2025 Xiaoyu Xu All Rights Reserved.</p>
     <p>Let's Work Together!</p>
   </footer>
 
-  <!-- ---------------------------------------
-       JavaScript: Intersection Observer 
-       实现滚动渐进显示
-  ------------------------------------------>
+
+ <!-- ****************** JS JS JS JS JS ******************* -->
+   <!-- ****************** JavaScript SECTION ******************* -->
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('active');
-            // 加上后，元素只在第一次出现时动画
-            obs.unobserve(entry.target);
           }
         });
       }, {
-        threshold: 0.1  // 元素进入视口 10% 即触发
+        threshold: 0.1 
       });
 
       const revealEls = document.querySelectorAll('.reveal-on-scroll');
