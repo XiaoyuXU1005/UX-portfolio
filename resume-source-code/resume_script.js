@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // 只为 loading 部分保留闪烁效果
+    
     var initDot = document.getElementById("loading");
     var loading = setInterval(function () {
       if (initDot.innerHTML.length === 5) {
@@ -9,10 +9,10 @@ $(document).ready(function () {
       }
     }, 600);
   
-    // 填充顶部问候
+   
     $("#greeting").text("XIAOYU XU");
 
-    // ====== 个人信息 ======
+    // ====== info ======
     $("#email").text("Email: xuxy2002@outlook.com");
     $("#address").text("Address: Brantford, Ontario, Canada");
     $("#occupation").text("Occupation: UX Designer & Developer");
@@ -38,7 +38,7 @@ $(document).ready(function () {
     // ====== Experience ======
     $("#experience").html('EXPERIENCE');
 
-    // 银行经历
+    // bank
     $("#bank").html('<i class="fa-solid fa-building-columns" style="color: #ff0000; font-size: 25px;"></i> China Merchants Bank, Internship in Customer Service &nbsp(Tangshan City, July 2023)');
     $("#bank-role").html(`
       <ul>
@@ -49,7 +49,7 @@ $(document).ready(function () {
       </ul>
     `);
 
-    // 餐馆经历
+    // restaurant
     $("#restaurant").html('<i class="fa-solid fa-utensils" style="color: #ffcc00; font-size: 25px;"></i> Jumbo Dragon, Cashier and Server &nbsp(Brantford, Oct 2024~Jan 2025)');
     $("#restaurant-role").html(`
       <ul>
