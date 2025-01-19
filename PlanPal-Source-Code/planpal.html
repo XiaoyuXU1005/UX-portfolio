@@ -671,17 +671,17 @@
     </div>
   </div>
 
-  <!-- 在 body 标签末尾添加模态框 -->
+ 
   <div id="imageModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
     <img class="modal-content" id="modalImage">
   </div>
 
-  <!-- contact information-->
+  
   <div class="bottom-section"id="bottom-section">
     <p>
       Connect on LinkedIn:
-      <a href="https://www.linkedin.com/in/jessie-xu-592361232" target="_blank">Jessie Xu</a>
+      <a href="https://www.linkedin.com/in/jessie-xu-592361232" target="_blank">Xiaoyu (Jessie) Xu</a>
     </p>
     <p>
       Contact via Email:
@@ -695,9 +695,9 @@
     <p>Let's Work Together!</p>
   </footer>
   
-  <!-- Intersection Observer脚本 & Modal脚本 -->
+ 
   <script>
-    // Intersection Observer：出现时再做动画
+  
     document.addEventListener("DOMContentLoaded", function(){
       const observerOptions = {
         threshold: 0.1
@@ -717,23 +717,23 @@
       });
     });
 
-    // 点击"See Full Demo"打开全屏 Demo
+   
     function showDemo() {
       document.getElementById('fullDemo').style.display = 'block';
       document.body.style.overflow = 'hidden';
     }
-    // 关闭全屏 Demo
+    
     function closeDemo() {
       document.getElementById('fullDemo').style.display = 'none';
       document.body.style.overflow = 'auto';
     }
 
-    // 获取除模态框自己之外的所有图片
+    
     const images = document.querySelectorAll('img:not(.modal-content)');
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
 
-    // 为每张图片添加点击事件：打开大图
+   
     images.forEach(img => {
       img.addEventListener('click', function() {
         modal.style.display = 'block';
@@ -741,19 +741,19 @@
       });
     });
 
-    // 点击右上角关闭按钮
+  
     function closeModal() {
       modal.style.display = 'none';
     }
 
-    // 点击模态框外部也能关闭
+   
     window.addEventListener('click', function(event) {
       if (event.target == modal) {
         closeModal();
       }
     });
 
-    // 键盘 ESC 键关闭
+  
     document.addEventListener('keydown', function(event) {
       if (event.key === "Escape") {
         closeModal();
