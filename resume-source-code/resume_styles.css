@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-/* 头部导航 */
+
 header {
   background-color: #FDFCF7;
   padding: 1rem 2rem;
@@ -140,26 +140,26 @@ i {
   display: none;
 }
 
-/* sub-item: 左侧缩进 */
+
 .sub-item {
   margin-top: 20px;
   margin-left: 40px;
 }
 
-/* inline: 与图标文字保持同一行 */
+
 .inline {
   display: inline;
   margin-left: 10px;
 }
 
-/* 收叠列表（默认隐藏） */
+
 .collapsible-content {
   display: none;
   margin-left: 20px;
   list-style-type: square;
 }
 
-/* 收叠标题 */
+
 .collapsible {
   cursor: pointer;
   font-size: 18px;
@@ -224,13 +224,13 @@ i {
   vertical-align: middle;
   color: #000000;
 }
-/* Degree 标题 */
+
 .education-item h4 {
   margin-left: 40px;
   font-size: 28px;
   margin-bottom: 5px;
 }
-/* 收叠列表内容 */
+
 .education-item .collapsible-content {
   margin-left: 120px;
   list-style-type: disc;
@@ -239,7 +239,7 @@ i {
   margin-bottom: 5px;
   font-size: 22px;
 }
-/* 收叠标题 */
+
 .education-item .collapsible {
   margin-left: 75px;
   cursor: pointer;
@@ -268,13 +268,13 @@ i {
   vertical-align: middle;
   color: #000000;
 }
-/* Projects h4 副标题 */
+
 .projects-item h4 {
   margin-left: 40px;
   font-size: 28px;
   margin-bottom: 5px;
 }
-/* Projects 详情列表 */
+
 .projects-item div ul {
   margin-left: 100px;
   list-style-type: disc;
@@ -284,12 +284,12 @@ i {
   font-size: 22px;
 }
 
-/* Research Container */
+
 .research-item {
   margin-left: 40px;
 }
 .research-item h3 {
-  /* 跟 Experience / Projects 标题保持一致 */
+  
   display: flex;
   align-items: center;
   font-size: 30px;
@@ -336,20 +336,20 @@ footer {
   background-color: #FDFCF7;
   padding: 2rem;
   text-align: center;
-  margin-top: 4rem; /* 上方间距保留 */
-  width: 100%; /* 确保铺满屏幕宽度 */
-  box-sizing: border-box; /* 包括 padding 在宽度内 */
+  margin-top: 4rem; 
+  width: 100%; 
+  box-sizing: border-box; 
   font-family: 'Silkscreen', serif;
 }
 
-/* 个人信息居中 */
+
 #email, #address, #occupation {
   text-align: center;
   margin: 5px auto;
   font-size: 24px;
 }
 
-/* 或者使用容器来包裹这些信息 */
+
 .personal-info {
   display: flex;
   flex-direction: column;
