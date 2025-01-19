@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gradient Hero Portfolio</title>
-  <!-- 引入 Merriweather 字体（若无法访问 Google Fonts，请替换为其他方式） -->
+  <title>PlanPal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" 
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
   <style>
-    /* ===== 基础重置 ===== */
+    
     * {
       margin: 0;
       padding: 0;
@@ -21,7 +20,7 @@
       display: block;
       width: 100%;
       height: auto;
-      cursor: pointer; /* 鼠标悬停提示可点击 */
+      cursor: pointer; 
     }
     a {
       text-decoration: none;
@@ -31,209 +30,91 @@
       color: #333;
     }
 
-    /* 
-      ===== 第一页保留原样，只把它的 CSS 放在前面，避免被后续覆盖 ===== 
-      （千万不要修改 Hero 里的任何东西，包括字体）
-    */
-
     body {
-      font-family: "Helvetica Neue", Arial, sans-serif; /* 第一页原本设定 */
-      background-color: #f1f3f4; /* 页面整体背景 */
-      color: #000;
+      font-family: "Open Sans", serif;
+      background-color: #fff; 
       line-height: 1.6;
-      overflow-x: hidden; /* 避免因动画导致的水平滚动条 */
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
 
-    /* 容器通用样式（第一页就有用到） */
+    
     .container {
       position: relative;
       z-index: 2;
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 3rem;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 0;
       display: flex;
       align-items: center;
     }
 
-    /* 顶部导航（第一页也使用） */
+    header {
+      background-color: #FDFCF7;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px  rgba(255, 116, 177, 0.6);
+      font-family: 'Orbitron', sans-serif;
+    }
     nav {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
-      padding: 0;
     }
-    .logo {
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
-    .nav-links {
+    nav ul {
+      list-style: none;
       display: flex;
       gap: 2rem;
-      margin-left: auto;
     }
-    .nav-links a {
-      margin: 0;
-      font-weight: 500;
-      color: #000;
+    nav a {
+      text-decoration: none;
       transition: color 0.3s ease;
     }
-    .nav-links a:hover {
-      color: #2a9f1f;
+    nav a:hover {
+      color: rgba(255, 116, 177, 0.6);
     }
 
-    /* ===== 第一页：Hero Section（保持你的美化版本，不作任何修改） ===== */
     .hero {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      position: relative;
+      min-height: 100vh;
+      width: 100vw;
+      background-image: url('../PlanPal-Figma/hero.png');
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
       overflow: hidden;
-      background: #f1f3f4;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 400px;
-      height: 400px;
-      background: linear-gradient(
-        135deg,
-        #d9f9c4 0%,
-        #b2e68c 25%,
-        #8cd45b 50%,
-        #5ebf3c 75%,
-        #2a9f1f 100%
-      );
-      filter: blur(80px);
-      opacity: 0.7;
-      border-radius: 0 0 100% 0;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 400px;
-      height: 400px;
-      background: linear-gradient(
-        135deg,
-        #d9f9c4 0%,
-        #b2e68c 25%,
-        #8cd45b 50%,
-        #5ebf3c 75%,
-        #2a9f1f 100%
-      );
-      filter: blur(80px);
-      opacity: 0.7;
-      border-radius: 100% 0 0 0;  
-    }
-    .hero .hero-content {
-      flex: 1;
-      padding: 3rem 1rem;
-    }
-    .hero-title {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    .hero-subtitle {
-      font-size: 1.5rem;
-      max-width: 500px;
-      margin-bottom: 3rem;
-      color: #555;
-    }
-    .hero .hero-image {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-    }
-    .hero-image img {
-      max-width: 80%;
-      object-fit: contain;
-    }
-    .hero-content a {
-      background-color: #000;
-      color: #fff;
-      padding: 0.8rem 1.2rem;
-      border-radius: 50px;
-      font-weight: bold;
-      border: 2px solid #000;
-      transition: all 0.3s ease;
-    }
-    .hero-content a:hover {
-      background-color: #fff !important;
-      color: #000 !important;
-    }
-
-    /* 
-      ===== 下面开始统一页面的样式，但要避免覆盖第一页 .hero 的字体等 ===== 
-      做法：先整体设为 Merriweather，然后再对 .hero 内部强行保持原本的字体
-    */
-    body > *:not(.hero) * {
-      font-family: "Merriweather", serif !important;
+      margin: 0;
+      padding: 0;
     }
 
     h5, h6 {
       font-weight: 700;
       text-align: center;
-      margin: 1rem 0; /* 每个单词的上下间距 */
+      margin: 4rem 0 2rem; 
     }
+
     h5 {
       font-size: 3rem;
-      font-family: "Merriweather", serif; /* User Research 字体大小 */
+      color: #79bd9a;
     }
     h6 {
-      font-size: 2.5rem; 
-      font-family: "Merriweather", serif;/* Prototyping 字体大小 */
+      font-size: 3rem; 
+      color: #79bd9a;
     }
-    /*
-      ===== 让后续 section 也带有淡淡的渐变背景，但比第一页柔和 =====
-      并统一版面布局、增加一点圆角和阴影，让卡片感更明显
-    */
+    
     section:not(.hero) {
       position: relative;
       width: 90%;
       margin: 3rem auto;
-      /* 让上下左右皆为 3rem */
       padding: 3rem;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
       overflow: hidden;
     }
-    /* 在 section 的对角加上模糊渐变，呼应首页风格但弱化一些 */
-    section:not(.hero)::before,
-    section:not(.hero)::after {
-      content: '';
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      background: linear-gradient(
-        135deg,
-        #d9f9c4 0%,   
-        #b2e68c 25%, 
-        #8cd45b 50%, 
-        #5ebf3c 75%, 
-        #2a9f1f 100%  
-      );
-      filter: blur(60px);
-      opacity: 0.15;
-      z-index: 1;
-    }
-    section:not(.hero)::before {
-      top: -100px;
-      left: -100px;
-      border-radius: 0 0 100% 0;
-    }
-    section:not(.hero)::after {
-      bottom: -100px;
-      right: -100px;
-      border-radius: 100% 0 0 0;
-    }
+
     section:not(.hero) .container {
       position: relative;
       z-index: 2;
@@ -242,45 +123,38 @@
       align-items: center;
       gap: 2rem;
       width: 100%;
-      /* 这里去掉 padding, 交给外层 section 统一管理 */
       padding: 0;
     }
 
-    /* 标题、文字层级统一简化 */
     .section-title {
-      font-size: 2.2rem;
+      font-size: 2rem;
       text-align: left;
-      margin: 2rem 0 3rem;
       color: #000;
       font-weight: 700;
     }
-    .section-title.center {
-      text-align: center;
-    }
+   
     h3 {
       font-size: 1.4rem;
       margin-bottom: 1rem;
       color: #333;
       font-weight: 700;
     }
-    /* 调小段落间距 */
+   
     p {
-      font-size: 1rem;
+      font-size: 1.2rem;
       line-height: 1.6;
       color: #444;
       margin-bottom: 1rem;
     }
 
-    /* 为更好分层，某些小标题可自己加粗或加行间距 */
     .subheading {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
       margin-top: 1rem;
       color: #555;
     }
 
-    /* Intersection Observer 动画样式 */
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -300,24 +174,6 @@
       transform: translateX(0);
     }
 
-    /* 保留其他内容的网格或弹性布局，但做微调让排版更整齐 */
-    .research-details h3 {
-      margin-bottom: 0.5rem;
-    }
-    .personas-wrapper {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    .highfi-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1rem;
-    }
-    .highfi-gallery img {
-      object-fit: cover;
-    }
-
     footer {
       text-align: center;
       padding: 2rem 0;
@@ -326,74 +182,6 @@
       margin-top: 2rem;
     }
 
-    /* 调整 header 高度，避免过大空白 */
-    header .container {
-      padding: 1rem 0;
-      display: flex;
-      align-items: center;
-    }
-    nav {
-      padding: 0;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-    .nav-links a {
-      margin: 0;
-      font-weight: 500;
-    }
-
-    /* 笔记本整体容器 */
-    .laptop {
-      width: 600px;
-      margin: 2rem auto;
-      position: relative;
-    }
-    .laptop-shell {
-      background: #fff;
-      border: 2px solid #000;
-      border-radius: 10px;
-      height: 375px;
-      position: relative;
-      box-shadow: none;
-    }
-    .laptop-screen {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      right: 20px;
-      bottom: 20px;
-      background: #fff;
-      border: 1px solid #000;
-      border-radius: 2px;
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
-    .laptop-screen .screen-content {
-      position: relative;
-      height: auto;
-      box-sizing: border-box;
-      text-align: center;
-    }
-    .laptop-screen .screen-content img {
-      display: inline-block;
-      margin: 1rem;
-      max-width: 90%;
-      height: auto;
-      object-fit: cover;
-    }
-    .laptop-shell, 
-    .laptop-screen, 
-    .laptop-screen .screen-content {
-      box-sizing: border-box;
-    }
-    .laptop-screen .screen-content h2,
-    .laptop-screen .screen-content p {
-      display: none;
-    }
-
-    /* 第二部分信息 */
     .basic-info {
       display: flex;
       flex-wrap: wrap;
@@ -415,8 +203,6 @@
       color: #555;
       font-size: 1rem;
     }
-
-    /* 设计流程图等 */
     .feature-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -447,70 +233,60 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
       height: 100vh;
       background: #fff;
       z-index: 1000;
       display: none;
       overflow-y: auto;
+      padding: 2rem 4rem;
+      margin: 0;
     }
     .demo-container {
-      max-width: 1400px;
-      margin: 2rem auto;
-      padding: 2rem;
+      width: 100%;
+      margin: 0;
+      padding: 0;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      overflow-x: hidden;
+    }
+    .demo-container img {
+      display: block;
+      width: 100%;
+      max-width: none;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      object-fit: cover;
+      cursor: default; 
+      pointer-events: none;
     }
     .close-demo {
       position: fixed;
-      top: 2rem;
-      right: 2rem;
+      top: 1rem;
+      right: 1rem;
       font-size: 2rem;
       cursor: pointer;
-      background: none;
+      background: rgba(255, 255, 255, 0.8);
       border: none;
       color: #000;
       z-index: 1001;
-    }
-    .demo-laptop {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .demo-laptop .laptop {
-      width: 1200px;
-      margin: 2rem auto;
-    }
-    .demo-laptop .laptop-shell {
-      height: 750px;
-    }
-    .demo-laptop .laptop-screen {
-      top: 40px;
-      left: 40px;
-      right: 40px;
-      bottom: 40px;
-    }
-    .demo-laptop .laptop-screen img {
-      max-width: 95%;
-      margin: 2rem auto;
-    }
-    .demo-laptop .laptop-base {
-      height: 30px;
-    }
-    .demo-container {
-      max-width: 1400px;
-      margin: 4rem auto;
-      padding: 2rem;
-      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
       display: flex;
+      align-items: center;
       justify-content: center;
-      align-items: flex-start;
     }
-
-    /* === 查看大图的 Modal 样式 === */
     .modal {
-      display: none; /* 初始隐藏 */
+      display: none; 
       position: fixed;
-      z-index: 2000; /* 盖在 demo-overlay 之上 */
+      z-index: 2000;
       top: 0;
       left: 0;
       width: 100%;
@@ -539,84 +315,72 @@
       opacity: 1;
     }
 
+    img:not(.demo-container img) {
+      display: block;
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .bottom-section {
+      text-align: center;
+      margin: 3rem auto;
+      font-size: 1rem;
+    }
+    .bottom-section a {
+      color: rgba(255, 116, 177, 0.6);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 116, 177, 0.6);
+      transition: opacity 0.3s ease;
+    }
+    .bottom-section a:hover {
+      opacity: 0.8;
+    }
+    
+    footer {
+      background-color: #FDFCF7;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+      font-family: 'Orbitron', sans-serif;
+    }
+    footer p {
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+      font-family: var(--hero-font);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- 顶部导航 -->
+  <!-- header -->
   <header>
-    <div class="container">
-      <nav>
-        <div class="logo">
-          <a href="#" style="text-decoration: none; color: inherit;">Planpal</a>
-        </div>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="#highfi">High-fi</a>
-          <a href="#">Contact</a>
-        </div>
-      </nav>
-    </div>
+    <nav>
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../index.html#projects">Projects</a></li>
+        <li><a href="../../resume-source-code/resume.html">Resume</a></li>
+      </ul>
+      <ul>
+        <li><a href="../../aboutme.html">About Me</a></li>
+        <li><a href="#bottom-section">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- ===== 第一页：Hero Section（不动任何内容或样式） ===== -->
+  
   <section class="hero">
-    <div class="container" style="display: flex;">
-      <!-- 左侧文字内容 -->
-      <div class="hero-content">
-        <h1 class="hero-title">Planpal</h1>
-        <p class="hero-subtitle">
-          Easy Come, Easy Go！<br>
-          An online travel agency for easy travel.
-        </p>
-      </div>
-      <!-- 右侧插图（若不需要可删除） -->
-      <div class="hero-image">
-        <div class="laptop" id="demo">
-          <!-- 笔记本外壳 -->
-          <div class="laptop-shell">
-            <!-- 笔记本屏幕，可滚动 -->
-            <div class="laptop-screen">
-              <div class="screen-content">
-                <h2>Planpal Preview</h2>
-                <p>这里展示你的网页或图片，当内容高度超过屏幕区域时，就会出现滚动条。</p>
-                
-                <!-- 示例：放几张图片 -->
-                <img src="planning1.png" alt="Screenshot 1"/>
-                <img src="planning2.png" alt="Screenshot 2"/>
-                <img src="planning3.png" alt="Screenshot 3"/>
-                <img src="planning4.png" alt="Screenshot 4"/>
-                <img src="planning5.png" alt="Screenshot 5"/>
-                <img src="planning6.png" alt="Screenshot 6"/>
-                <img src="planning7.png" alt="Screenshot 7"/>
-                <img src="planning8.png" alt="Screenshot 8"/>
-                <img src="planning9.png" alt="Screenshot 9"/>
-                <img src="Hotel 1.png" alt="Hotel Screenshot 1"/>
-                <img src="Hotel 2.png" alt="Hotel Screenshot 2"/>
-                <img src="Hotel 3.png" alt="Hotel Screenshot 3"/>
-                <img src="Hotel 4.png" alt="Hotel Screenshot 4"/>
-                <img src="Hotel 5.png" alt="Hotel Screenshot 5"/>
-                <img src="Hotel 6.png" alt="Hotel Screenshot 6"/>
-                <img src="Hotel 7.png" alt="Hotel Screenshot 7"/>
-                <img src="Checkout 1.png" alt="Checkout Screenshot 1"/>
-                <img src="Checkout 2.png" alt="Checkout Screenshot 2"/>
-                <img src="Checkout 3.png" alt="Checkout Screenshot 3"/>
-                <img src="Checkout 4.png" alt="Checkout Screenshot 4"/>
-                <img src="Checkout 5.png" alt="Checkout Screenshot 5"/>
-              </div>
-            </div>
-          </div>
-          <!-- 笔记本键盘区域（简化） -->
-          <div class="laptop-base"></div>
-        </div>
-      </div>
-    </div>
   </section>
 
-  <!-- ===== 后续页面统一风格，文字精简，layout 优化 ===== -->
+ 
 
   <!-- Project Info Section -->
-  <section class="second-section fade-in">
+  <section class="fade-in">
     <div class="container" style="position: relative; z-index: 3;">
       <div class="basic-info">
         <div class="info-item">
@@ -641,11 +405,11 @@
 
 
   <!-- Design Process Section -->
+  <h5>Design Process</h5>
   <section class="fade-in">
     <div class="container">
-      <h2 class="section-title">Design Process</h2>
       <div style="width: 100%; max-width: 1000px;">
-        <img src="design-process.png" alt="Design Process" />
+        <img src="../PlanPal-Research/design-process.png" alt="Design Process" />
       </div>
     </div>
   </section>
@@ -658,7 +422,7 @@
       <h2 class="section-title">Competitive Analysis</h2>
       <div class="container" style="flex-direction: row; gap: 2rem;">
         <div class="section-image" style="flex:1;">
-          <img src="comp.png" alt="Competitive Analysis"/>
+          <img src="../PlanPal-Research/competitive-analysis.png" alt="Competitive Analysis"/>
         </div>
         <div class="section-content" style="flex:1;">
           <p>
@@ -688,8 +452,8 @@
       <h2 class="section-title">User Personas</h2>
       <div class="container" style="flex-direction: row; gap: 2rem;">
         <div class="section-image" style="flex:1; display: flex; gap: 2rem;">
-          <img src="persona2.jpg" alt="User Persona 1" style="width: 48%;"/>
-          <img src="persona3.jpg" alt="User Persona 2" style="width: 48%;"/>
+          <img src="../PlanPal-Research/persona1.jpg" alt="User Persona 1" style="width: 48%;"/>
+          <img src="../PlanPal-Research/persona2.jpg" alt="User Persona 2" style="width: 48%;"/>
         </div>
         <div class="section-content" style="flex:1;">
           <p>
@@ -701,26 +465,26 @@
   </section>
 
   <!-- User Journey Map Section -->
-  <section class="fade-in">
+  <section id="research" class="fade-in">
     <div class="container" style="align-items: flex-start;">
       <h2 class="section-title">User Journey Map</h2>
       <div class="container" style="flex-direction: row; gap: 2rem;">
         <div class="section-image" style="flex:1;">
-          <img src="journeymap.jpg" alt="User Journey Map"/>
+          <img src="../PlanPal-Research/journey-map.jpg" alt="User Journey Map"/>
         </div>
         <div class="section-content" style="flex:1;">
-          <p class="subheading">Objective</p>
           <p>
+            <span class="subheading">Objective</span><br>
             Understand the end-to-end booking experience, spot friction points, and improve flow.
           </p>
-          <p class="subheading">Key Insights</p>
           <p>
+            <span class="subheading">Key Insights</span><br>
             • Discovery: Stronger search filters<br>
             • Decision: Transparent pricing<br>
             • Payment: Clear & secure methods
           </p>
-          <p class="subheading">Outcome</p>
           <p>
+            <span class="subheading">Outcome</span><br>
             A seamless experience at every stage of travel planning.
           </p>
         </div>
@@ -728,22 +492,21 @@
     </div>
   </section>
 
+
   <!-- Usability Issue Prioritization -->
-  <section id="usability" class="fade-in">
-    <div class="container">
+  <section class="fade-in">
+    <div class="container" style="align-items: flex-start;">
       <h2 class="section-title">Usability Issue Prioritization</h2>
-      <div class="container" style="flex-direction: row; gap: 2rem; align-items: flex-start;">
-        <div class="section-content" style="flex:1;">
-          <p>
-            We ranked issues by user value and ease of implementation. High-value, low-effort features (price comparison, unified checkout, split bills) lead our focus. More complex but valuable features (real-time updates, AI-based curation) remain future priorities. Low-value items (like badges) are deprioritized for resource efficiency.
-          </p>
-        </div>
-        <div class="section-image" style="flex:1; display: flex; align-items: center;">
-          <img src="productivity.png" alt="Usability Issue Prioritization" style="max-width: 100%;"/>
-        </div>
-      </div>
+      <p>
+        We ranked issues by user value and ease of implementation.
+        High-value, low-effort features (price comparison, unified checkout, split bills) lead our focus. 
+        More complex but valuable features (real-time updates, AI-based curation) remain future priorities. 
+        Low-value items (like badges) are deprioritized for resource efficiency.
+      </p>
+      <img src="../PlanPal-Research/productivity.png" alt="Usability Issue Prioritization"/>
     </div>
   </section>
+
 
   <h6>Prototyping</h6>
   <!-- Low-fidelity Prototype -->
@@ -753,7 +516,7 @@
       <p>
         Using Figma, we transformed initial ideas into low-fidelity wireframes covering Landing, Price Comparison, Timeline, Social Media, and Reviews.
       </p>
-      <img src="lowfipp.png" alt="Low-Fidelity Prototype"/>
+      <img src="../PlanPal-Research/low-fi.jpg" alt="Low-Fidelity Prototype"/>
     </div>
   </section>
 
@@ -765,29 +528,19 @@
         We grouped feedback to improve booking changes, flexible pricing, simpler decision-making (price comparisons, split bills), and curated itineraries. 
         These insights help us target critical areas for a more convenient and user-friendly booking experience.
       </p>
-      <img src="afmap.png" alt="Affinity Mapping & Feedback"/>
+      <img src="../PlanPal-Research/mid-fi-feedback.png" alt="Affinity Mapping & Feedback"/>
     </div>
   </section>
 
   <!-- Updated Usability Issue Prioritization -->
-  <section class="fade-in">
-    <div class="container">
+   <!-- Usability Issue Prioritization -->
+   <section class="fade-in">
+    <div class="container" style="align-items: flex-start;">
       <h2 class="section-title">Updated Usability Issue Prioritization</h2>
-      <div class="container" style="flex-direction: row; gap: 2rem; align-items: flex-start;">
-        <div class="section-content" style="flex:1;">
-          <p>
-            <span class="subheading">Two Main Themes</span><br>
-            1) Convenience & Key Features: Cost splitting, price comparison<br>
-            2) Gaps in Content & Clarity: Missing details on accommodations, local tips, social media usage
-          </p>
-          <p>
-            Addressing these gaps boosts usability and trust. Highly valued features remain our top priority.
-          </p>
-        </div>
-        <div class="section-image" style="flex:1; display: flex; align-items: center;">
-          <img src="revision.png" alt="Updated Usability Issue Prioritization" style="max-width: 100%;"/>
-        </div>
-      </div>
+      <p>
+        We ranked issues by user value and ease of implementation. High-value, low-effort features (price comparison, unified checkout, split bills) lead our focus. More complex but valuable features (real-time updates, AI-based curation) remain future priorities. Low-value items (like badges) are deprioritized for resource efficiency.
+      </p>
+      <img src="../PlanPal-Research/usability-revision.jpg" alt="Usability Issue Prioritization"/>
     </div>
   </section>
 
@@ -798,7 +551,7 @@
       <p>
         A concise flow shows how users discover, book, and plan trips seamlessly within Planpal.
       </p>
-      <img src="user-flow.png" alt="User Flow"/>
+      <img src="../PlanPal-Research/user-flow.png" alt="User Flow"/>
     </div>
   </section>
 
@@ -810,10 +563,10 @@
         Incorporating low-fi feedback, our mid-fidelity design refines the flow and separates the site into two key functions: booking and planning.
       </p>
       <div>
-        <img src="midplanning.png" alt="Mid-Fidelity Prototype 1"/>
+        <img src="../PlanPal-Research/mid-fi-planning.png" alt="Mid-Fidelity Prototype for planning"/>
       </div>
       <div style="margin-top:1rem;">
-        <img src="midbooking.png" alt="Mid-Fidelity Prototype 2"/>
+        <img src="../PlanPal-Research/mid-fi-booking.png" alt="Mid-Fidelity Prototype for booking"/>
       </div>
     </div>
   </section>
@@ -827,7 +580,7 @@
         Users enjoyed convenience features (cost splitting, price comparison) but desired clearer details on accommodations, local recommendations, and social media. 
         Refining checkout and clarifying extra features enhance user trust.
       </p>
-      <img src="midfiresult.png" alt="Usability Test Result"/>
+      <img src="../PlanPal-Research/mid-fi-result.png" alt="Usability Test Result"/>
     </div>
   </section>
 
@@ -840,31 +593,31 @@
       </p>
       <div class="feature-grid">
         <div class="feature-item">
-          <img src="Hotel 4.png" alt="Price Comparison Feature"/>
+          <img src="../PlanPal-Figma/hotel 4.png" alt="Price Comparison Feature"/>
           <h3>Price Comparison</h3>
           <p>
             Compare hotels or flights side by side before entering their details. This greatly reduces decision time in travel bookings.
           </p>
         </div>
         <div class="feature-item">
-          <img src="Hotel 7.png" alt="Add to Cart Feature"/>
+          <img src="../PlanPal-Figma/hotel 7.png" alt="Add to Cart Feature"/>
           <h3>Add to Cart</h3>
           <p>
             A shopping cart feature lets users bundle different services and pay once, making the process more streamlined.
           </p>
         </div>
         <div class="feature-item">
-          <img src="Checkout 4.png" alt="Split Bill Feature"/>
+          <img src="../PlanPal-Figma/checkout 4.png" alt="Split Bill Feature"/>
           <h3>Split bill with friends</h3>
           <p>
             Invite friends to split costs by email or avatar. The system auto-splits prices and sends invitations, easing group travel expenses.
           </p>
         </div>
         <div class="feature-item">
-          <img src="planningx.png" alt="Trip Timeline Feature"/>
+          <img src="../PlanPal-Figma/planning 9.png" alt="Trip Timeline Feature"/>
           <h3>Trip Timeline</h3>
           <p>
-            Planpal’s planning section helps users generate a detailed travel schedule, from reservations to itinerary, all in one website.
+            Planpal's planning section helps users generate a detailed travel schedule, from reservations to itinerary, all in one website.
           </p>
         </div>
       </div>
@@ -877,12 +630,6 @@
     </div>
   </section>
 
-  <!-- 底部 -->
-  <footer>
-    <p>© 2025 Planpal. All rights reserved.</p>
-  </footer>
-
-  <!-- Full Demo Overlay -->
   <div class="demo-overlay" id="fullDemo">
     <button class="close-demo" onclick="closeDemo()">×</button>
     <div class="demo-container">
@@ -891,10 +638,30 @@
           <div class="laptop-shell">
             <div class="laptop-screen">
               <div class="screen-content">
-                <!-- 复制原来笔记本电脑中的图片内容 -->
-                <img src="planning1.png" alt="Screenshot 1"/>
-                <img src="planning2.png" alt="Screenshot 2"/>
-                <!-- ... 其他图片 ... -->
+                <img src="../PlanPal-Figma/landing-page.png"/>
+                <img src="../PlanPal-Figma/hotel 1.png"/>
+                <img src="../PlanPal-Figma/hotel 2.png"/>
+                <img src="../PlanPal-Figma/hotel 3.png"/>
+                <img src="../PlanPal-Figma/hotel 4.png"/>
+                <img src="../PlanPal-Figma/hotel 5.png"/>
+                <img src="../PlanPal-Figma/hotel 6.png"/>
+                <img src="../PlanPal-Figma/hotel 7.png"/>
+            
+                <img src="../PlanPal-Figma/checkout 1.png"/>
+                <img src="../PlanPal-Figma/checkout 2.png"/>
+                <img src="../PlanPal-Figma/checkout 3.png"/>
+                <img src="../PlanPal-Figma/checkout 4.png"/>
+                <img src="../PlanPal-Figma/checkout 5.png"/>
+                
+                <img src="../PlanPal-Figma/planning 1.png"/>
+                <img src="../PlanPal-Figma/planning 2.png"/>
+                <img src="../PlanPal-Figma/planning 3.png"/>
+                <img src="../PlanPal-Figma/planning 4.png"/>
+                <img src="../PlanPal-Figma/planning 5.png"/>
+                <img src="../PlanPal-Figma/planning 6.png"/>
+                <img src="../PlanPal-Figma/planning 7.png"/>
+                <img src="../PlanPal-Figma/planning 8.png"/>
+                <img src="../PlanPal-Figma/planning 9.png"/>
               </div>
             </div>
           </div>
@@ -910,6 +677,24 @@
     <img class="modal-content" id="modalImage">
   </div>
 
+  <!-- contact information-->
+  <div class="bottom-section"id="bottom-section">
+    <p>
+      Connect on LinkedIn:
+      <a href="https://www.linkedin.com/in/jessie-xu-592361232" target="_blank">Jessie Xu</a>
+    </p>
+    <p>
+      Contact via Email:
+      <a href="mailto:xuxy2002@outlook.com">xuxy2002@outlook.com</a>
+    </p>
+  </div>
+
+  <!-- footer -->
+  <footer>
+    <p>© 2025 Xiaoyu Xu All Rights Reserved.</p>
+    <p>Let's Work Together!</p>
+  </footer>
+  
   <!-- Intersection Observer脚本 & Modal脚本 -->
   <script>
     // Intersection Observer：出现时再做动画
@@ -932,7 +717,7 @@
       });
     });
 
-    // 点击“See Full Demo”打开全屏 Demo
+    // 点击"See Full Demo"打开全屏 Demo
     function showDemo() {
       document.getElementById('fullDemo').style.display = 'block';
       document.body.style.overflow = 'hidden';

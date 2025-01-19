@@ -316,6 +316,21 @@ i {
   font-size: 22px;
 }
 
+.bottom-section {
+  text-align: center;
+  margin: 3rem auto;
+  font-size: 1rem;
+}
+.bottom-section a {
+  color: rgba(255, 116, 177, 0.6);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 116, 177, 0.6);
+  transition: opacity 0.3s ease;
+}
+.bottom-section a:hover {
+  opacity: 0.8;
+}
+
 /* footer */
 footer {
   background-color: #FDFCF7;

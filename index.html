@@ -26,11 +26,10 @@
     }
     :root {
       --accent-color: #000;           
-      --bg-color: #f2f7ed;           
+      --bg-color: #f7f5ed;           
       --text-color: #000;            
-      /* 将像素风变量替换为 Orbitron */
       --pixel-font: 'Orbitron', sans-serif; 
-      --hero-text-color: #fff;  
+      --hero-text-color: #222222;  
       --hero-font: 'Orbitron', sans-serif;  
     }
 
@@ -85,10 +84,11 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 75vh; 
+      height: 85vh;
       text-align: center;
-      padding: 2rem;
+      padding: 4rem 2rem;
       overflow: visible;
+      margin-top: 3rem;
     }
 
     /* the ball in the middle */
@@ -98,13 +98,13 @@
       height: 600px;
       border-radius: 50%;
       background: radial-gradient(
-        circle farthest-corner at 30% 30%,
-        rgba(0, 160, 180, 1) 0%,      
-        rgba(0, 120, 160, 0.8) 20%,   
-        rgba(89, 193, 186, 0.3) 40%,  
-        rgba(255, 116, 177, 0.6) 65%,
-        #6f7bf7 100%                 
-      );
+  circle farthest-corner at 30% 30%,
+  rgba(0, 160, 180, 1) 0%,      
+  rgba(0, 120, 160, 0.8) 20%,   
+  rgba(89, 193, 186, 0.3) 40%,  
+  rgba(255, 116, 177, 0.6) 65%,
+  #6f7bf7 100%                 
+);
       filter: blur(100px);
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
@@ -114,12 +114,11 @@
     /* typewriter animation for the name */
     .typewriter h1 {
       font-family: var(--hero-font);
-      font-weight: 700;
+      font-weight: 400;
       font-size: clamp(2rem, 8vw, 6rem);
       color: var(--hero-text-color);
-
       white-space: nowrap;
-      border-right: 4px solid #fff;
+      border-right: 4px solid #222222;
       overflow: hidden; 
       width: 0;
       
@@ -129,7 +128,7 @@
       margin-bottom: 1.5rem;
       position: relative;
       z-index: 2;  
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      text-shadow: 4px 4px 8px rgba(0, 0, 0, 0);
     }
     @keyframes typingLine {
       0% { width: 0; }
@@ -137,22 +136,22 @@
     }
     @keyframes blinkCaret {
       0%, 100% { border-color: transparent; }
-      50% { border-color: #fff; }
+      50% { border-color: #222222; }
     }
 
     /* My introduction */
     .hero-subtitle {
       z-index: 2;
-      font-size: clamp(0.8rem, 2vw, 1rem);
+      font-size: clamp(1.1rem, 2.8vw, 1.2rem);
       width: 90%;
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto 2rem auto;
       opacity: 0;
       animation: fadeIn 1.5s ease forwards;
       animation-delay: 2.1s;
       line-height: 1.6;
       position: relative;
-      color: #fff;
+      color: #222222;
       font-family: var(--hero-font);
       font-weight: 500;
     }
@@ -165,7 +164,7 @@
     .pixel-grid {
       display: inline-block;
       background-color: transparent;
-      border: 2px solid #fff;
+      border: 2px solid #222222;
       padding: 0.5rem 1rem;
       cursor: pointer;
       text-decoration: none;
@@ -180,18 +179,19 @@
       border-radius: 50px; 
     }
     .pixel-grid:hover {
-      background-color: #fff;
+      background-color: #222222;
       transform: translate(-2px, -2px);
       box-shadow: 4px 4px 0 #000;
     }
     .pixel-grid:hover .text {
-      color: #000;
+      color: #fff;
     }
     .pixel-grid .text {
       font-family: var(--hero-font);
-      color: #fff;
+      color: #222222;
       font-size: 0.9rem;
       text-decoration: none;
+      font-weight: 700;
     }
 
     /* ---------------------------------------
@@ -205,14 +205,10 @@
     .projects h2 {
       font-family: var(--hero-font);
       text-align: center;
-      font-size: 1.8rem;
+      font-size: 2.5rem;
       margin-bottom: 2.5rem;
-      color: #fff;  
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      transition: color 0.3s ease;
-    }
-    .projects h2:hover {
-      color: rgba(255, 116, 177, 0.6);
+      color: #222222;
+      font-weight: 700;
     }
 
     .project-section {
@@ -220,10 +216,10 @@
     }
     .project-section h3 {
       font-family: var(--hero-font);
-      font-size: 1.2rem;
-      color: #fff;  
+      font-size: 2rem;
+      color: #222222;
+      font-weight: 400;
       margin-bottom: 1.5rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     /* project card */
@@ -236,7 +232,7 @@
       justify-content: space-between;
       min-height: 280px;
       border-radius: 40px; 
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.30);
       margin-bottom: 2rem;
       transition: transform 0.2s ease, background 0.3s ease;
     }
@@ -244,9 +240,9 @@
       transform: scale(1.01);
       background: linear-gradient(
         135deg,
-        rgba(111, 123, 247, 0.2),
-        rgba(89, 193, 186, 0.2),
-        rgba(255, 116, 177, 0.2)
+        rgba(111, 123, 247, 0.4),
+        rgba(89, 193, 186, 0.4),
+        rgba(255, 116, 177, 0.4)
       );
     }
 
@@ -257,23 +253,22 @@
     }
 
     .project-info-left h4 {
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
-      color: rgba(255, 255, 255, 0.9);
+      color: #222222;
     }
 
     .project-info-left p {
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: 1.2rem;
+      line-height: 1.8;
       margin-bottom: 1rem;
-      color: rgba(255, 255, 255, 0.8);
+      color: #222222;
     }
 
     /* make the product photo 300*300 square */
     .project-image-right {
       flex: 0.8 1 300px;
-      padding: 2rem;
-      margin-right: 2rem;
+      padding: 1rem;
       height: 300px; 
       display: flex;
       align-items: center;
@@ -362,11 +357,11 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="resume.html">Resume</a></li>
+        <li><a href="resume-source-code/resume.html">Resume</a></li>
       </ul>
       <ul>
-        <li><a href="#">About Me</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="#bottom-section">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -388,7 +383,7 @@
     </p>
 
     <!-- resume button -->
-    <a href="resume.html" class="pixel-grid">
+    <a href="resume-source-code/resume.html" class="pixel-grid">
       <div class="text">CHECK MY RESUME</div>
     </a>
   </section>
@@ -402,7 +397,7 @@
       <h3>Finished Projects</h3>
 
       <!-- heartmony -->
-      <a href="heartmony.html" style="text-decoration: none;">
+      <a href="Heartmony-Source-code/heartmony.html" style="text-decoration: none;">
         <div class="project-card reveal-on-scroll">
           <div class="project-info-left">
             <h4>Heartmony</h4>
@@ -411,13 +406,13 @@
             <p>A haptic pendant redefining concerts for the deaf and hard of hearing.</p>
           </div>
           <div class="project-image-right">
-            <img src="neck.jpeg" alt="Heartmony Pendant">
+            <img src="Heartmony-Figma/neck.jpeg" alt="Heartmony Pendant">
           </div>
         </div>
       </a>
 
       <!-- planpal -->
-      <a href="planpal.html" style="text-decoration: none;">
+      <a href="PlanPal-Source-Code/planpal.html" style="text-decoration: none;">
         <div class="project-card reveal-on-scroll">
           <div class="project-info-left">
             <h4>PlanPal</h4>
@@ -426,7 +421,7 @@
             <p>An online travel agency for easy travel.</p>
           </div>
           <div class="project-image-right">
-            <img src="Landing Page.png" alt="AR Furniture Preview">
+            <img src="PlanPal-Figma/landing-page.png" alt="Plan Pal Landing Page">
           </div>
         </div>
       </a>
@@ -452,13 +447,13 @@
   </section>
 
   <!-- contact information-->
-  <div class="bottom-section">
+  <div id="bottom-section" class="bottom-section">
     <p>
-      Connect on LinkedIn:
+      Connect me on LinkedIn:
       <a href="https://www.linkedin.com/in/jessie-xu-592361232" target="_blank">Jessie Xu</a>
     </p>
     <p>
-      Contact via Email:
+      Contact me via Email:
       <a href="mailto:xuxy2002@outlook.com">xuxy2002@outlook.com</a>
     </p>
   </div>
