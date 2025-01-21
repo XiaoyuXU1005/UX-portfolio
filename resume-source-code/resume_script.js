@@ -80,10 +80,10 @@ $(document).ready(function () {
       </ul>
     `);
     
-    $("#project3").html('<i class="fa-solid fa-venus-double" style="color: #bc5d7b;font-size: 25px;"></i> Orchid - a private and safe dating space for women belonging to the LGBTQ+ community &nbsp(Independent Project, Fall 2024)');
+    $("#project3").html('<i class="fa-solid fa-venus-double" style="color: #bc5d7b;font-size: 25px;"></i> Orchid - a private and safe dating space for women &nbsp(Independent Project, Fall 2024)');
     $("#project3-desc").html(`
       <ul>
-        <li>Proposed, designed, and developed an innovative dating app catering to Chinese sexual minority women.</li>
+        <li>Proposed, designed, and developed an innovative dating app catering to Chinese women.</li>
         <li>Conducted market analysis to identify gaps, define target audience pain points, and propose tailored solutions.</li>
         <li>Designed surveys, collecting 90 responses, and conducted user interviews with 7 participants to gather insights and validate concepts.</li>
         <li>Created low- and mid-fidelity prototypes to refine the app, incorporating user feedback.</li>
