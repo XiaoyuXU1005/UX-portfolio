@@ -22,12 +22,14 @@ const observerCallback = (entries) => {
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 
 // execute when the document finished loading
-document.addEventListener('DOMContentLoaded', () => {
-  // select all section
-  const sections = document.querySelectorAll('section');
-
-  // add slide-in interaction for all section
-  sections.forEach((section) => {
+document.addEventListener('DOMContentLoaded', function() {
+  // 只选择主要的 section
+  const sections = document.querySelectorAll(
+    '.first-section, .second-section, .client-section, .vision-section, .problem-space, .research-section, .wireframes-showcase, .feedback-section, .mid-fi-showcase, .final-iteration-section, .haptic-section, .app-interface-section'
+  );
+  
+  // 为每个主要 section 添加初始类并观察
+  sections.forEach(section => {
     section.classList.add('slide-in');
     observer.observe(section);
   });
